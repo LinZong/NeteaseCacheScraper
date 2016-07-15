@@ -23,7 +23,7 @@ def SplitNeteaseMusicId(dir,file,wildcard,recursion):
                         Correctfilename = jsondetail['songs'][0]['name']
                         Newdir = os.path.join(dir,Correctfilename) +".mp3"
                         print "Found:"+Correctfilename
-                        #os.rename(Olddir,Newdir)
+                        os.rename(Olddir,Newdir)
 
                                      
                     
