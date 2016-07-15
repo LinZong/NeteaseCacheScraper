@@ -13,10 +13,20 @@ def SplitNeteaseMusicId(dir,file,wildcard,recursion):
                     Olddir = os.path.join(dir,name)
                     JsonProcess(MusicId)
                     global Correctfilename
-                    Correctfilename = jsondetail['songs'][0]['name']
-                    Newdir = os.path.join(dir,Correctfilename) +".mp3"
-                    print "Found:"+Correctfilename
-                    os.rename(Olddir,Newdir)
+                    if not jsondetail['songs']:
+                    
+                        print "Cannot match the music,id is "+MusicId
+                        
+                    else:
+                    
+                        
+                        Correctfilename = jsondetail['songs'][0]['name']
+                        Newdir = os.path.join(dir,Correctfilename) +".mp3"
+                        print "Found:"+Correctfilename
+                        #os.rename(Olddir,Newdir)
+
+                                     
+                    
                     
                     break
 
